@@ -44,7 +44,9 @@ namespace Modon.Citizen.Plugins
                     var update = new Entity("ldv_document", doc.Id)
                     {
                         ["statecode"] = new OptionSetValue(1), // Inactive
-                        ["statuscode"] = new OptionSetValue(2) // Expired 
+                        ["statuscode"] = new OptionSetValue(2), // Expired 
+                        ["ldv_expirydate"] = DateTime.UtcNow
+
                     };
                     Service.Update(update);
                 }
